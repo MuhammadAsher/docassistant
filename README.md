@@ -25,8 +25,15 @@ ios/      SwiftUI client                                          (A5)
 
 ## Setup
 
+Needs [uv](https://docs.astral.sh/uv/) and git.
+
 ```
-cp .env.example .env   # then add your ANTHROPIC_API_KEY
+uv sync
+uv run python -m ingest.download      # clone the Swift book into data/
+uv run python -m ingest.build_index   # chunk + embed locally, about a minute, no API key
+uv run python -m ingest.search "How do I capture values in a closure?"
 ```
 
-Further steps are added as each part is built.
+For answers (next step): `cp .env.example .env` and add your ANTHROPIC_API_KEY.
+
+Example output: [runs/day2-search.md](runs/day2-search.md).

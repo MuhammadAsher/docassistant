@@ -1,0 +1,9 @@
+[project]
+name = "docassistant"
+version = "0.1.0"
+description = "Answers questions about The Swift Programming Language book, with citations."
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "fastembed>=0.4",
+    "numpy>=1.26",
+]
